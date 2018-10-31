@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    My Portfolio
+  </h1>
+  <a [routerLink]="[{ outlets: { primary: ['portfolios'] } }]">
+		Manage Portfolio
+	</a>
+</div>
+<div>
+	<div>
+		<router-outlet></router-outlet>
+	</div>
+</div>

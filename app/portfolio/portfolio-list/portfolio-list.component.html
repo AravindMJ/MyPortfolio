@@ -1,0 +1,71 @@
+<div class="container">
+ <div class="row">
+ <div class="col">
+ <section>
+ <header class="header">
+ <div class="row">
+ <div class="col-md-2">
+ <form name="empForm"> 
+ <table>
+  <tr>
+ <th colspan="2">Add Portfolio</th>
+ </tr>
+ <tr>
+ <td>StockName:</td>
+ <td><input id="stockName" name="stockName" ></td>
+ </tr>
+ <tr>
+ <td>Cost Price:</td>
+ <td><input id="costPrice" name="costPrice"></td>
+ </tr>
+ <tr>
+ <td>Market Price:</td>
+ <td><input id="marketPrice" name="marketPrice"></td>
+ </tr>
+ <tr>
+ <td colspan="2"> <button type="button" (click)="createPortfolio()" class="blue-button">submit</button></td>
+ </tr>
+ </table>
+ </form>
+ </div>
+ </div>
+</header>
+ </section>
+<section class="main">
+<table class="table">
+ <thead>
+ <tr>
+ <th>#</th>
+ <th></th>
+ <th>Stock Name</th>
+ <th></th>
+ <th>Cost Price</th>
+ <th></th>
+ <th>Market Price</th>
+ <th></th>
+ <th>P/L</th>
+ <th></th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr *ngFor="let portfolio of portfolios">
+ <th scope="row" align="center">{{portfolio.id}}</th>
+ <td></td>
+ <td align="center">{{portfolio.stockName}}</td>
+ <td></td>
+ <td align="center">{{portfolio.costPrice}}</td>
+ <td></td>
+ <td align="center">{{portfolio.marketPrice}}</td>
+ <td></td>
+ <td align="center">{{portfolio.marketPrice-portfolio.costPrice}}</td>
+ <td></td>
+ <td>
+ <button type="button" class="btn btn-danger" (click)="deletePortfolio(portfolio)">Delete</button>
+ </td>
+ </tr>
+</tbody>
+ </table>
+ </section>
+ </div>
+ </div>
+</div>
